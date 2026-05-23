@@ -1,0 +1,4 @@
+cd "C:\Users\veros\OneDrive\Desktop\Marketing and Advertising Test\legal-ops"
+git remote add origin https://github.com/rangedlegal/legal-ops.git
+git branch -M main
+git push -u origin main
