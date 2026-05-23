@@ -3,8 +3,8 @@ import { PrismaClient } from "../app/generated/prisma/client"
 import bcrypt from "bcryptjs"
 import { join } from "path"
 
-// Use absolute path so seed runs correctly regardless of working directory
-const DB_PATH = `file:${join(process.cwd(), "dev.db")}`
+// Use DATABASE_URL from environment, or fall back to local dev.db
+const DB_PATH = process.env.DATABASE_URL || `file:${join(process.cwd(), "dev.db")}`
 
 const adapter = new PrismaLibSql({ url: DB_PATH })
 const prisma = new PrismaClient({ adapter })
